@@ -24,6 +24,12 @@ public class Main {
 		VinylRecordProduct vinyl1 = new VinylRecordProduct("Ride The Lightning", 29.99, 1984, Genre.ROCK);
 		manager.addItem(vinyl1);
 		manager.updateItemPrice(vinyl1, 34.99);
+		
+		//Creates a second Vinyl and adds it to the manager
+		VinylRecordProduct vinyl2 = new VinylRecordProduct("The Moss", 29.99, 2015, Genre.ELECTRONIC);
+		manager.addItem(vinyl2);
+		
+
 	}
 
 }

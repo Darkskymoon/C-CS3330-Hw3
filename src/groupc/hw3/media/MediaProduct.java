@@ -1,4 +1,7 @@
 package groupc.hw3.media;
+
+import java.util.Objects;
+
 /*
  * Class: MediaProduct
  * This is the parent class of all of the different media products
@@ -82,8 +85,27 @@ public class MediaProduct {
 	public void setGenre(Genre genre) {
 		this.genre = genre;
 	}
-	
+
+
 	/////////////////////////////
+	
+	
+	
+	//equals function to test if two pieces of media are the same
+	public boolean equals(Object media) {
+		//casts the media Object as a MediaProduct
+		MediaProduct product = (MediaProduct)media;
+		//Compares the two objects and if title, genre, price, and year are the same, then the objects are the same
+		if(this.title == product.getTitle() 
+				&& this.genre == product.getGenre()
+				&& this.price == product.getPrice() 
+				&& this.year == product.getYear()) {
+			return true;
+		}
+		return false;
+	}
+	
+	
 	
 
 

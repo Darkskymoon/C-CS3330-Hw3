@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.Scanner;
 
 import groupc.hw3.media.CDRecordProduct;
@@ -19,6 +20,8 @@ public class StockManagerSingleton {
 	//Initializes the InventoryFilePath to the inventory.csv file provided from the assignment
 	//private so that it's path can't be accessed outside the method. Declared final so that the path can't change
 	private final String inventoryFilePath = "./src/groupc/hw3/files/inventory.csv";
+	
+	//an array list to hold all of the media Objects
 	private ArrayList<MediaProduct> inventory;
 	
 	private StockManagerSingleton() {
@@ -136,10 +139,11 @@ public class StockManagerSingleton {
 	/*
 	 * method: removeItem
 	 * This method removes a media product from the inventory
-	 * @param product The product to remove from the catalogue
+	 * @param product The product to remove from the catalog
 	 * @return true if the item was removed or false if it was not removed
 	 */
 	public boolean removeItem(MediaProduct product) {
+
 		return false;
 	}
 	

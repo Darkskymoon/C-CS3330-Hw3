@@ -20,6 +20,16 @@ public class CDRecordProduct extends MediaProduct{
 		super(media);
 	}
 	
+	//Checks if an object is of type CD and if so, checks to see if it is the same CD as another CD
+	@Override
+	public boolean equals(Object media) {
+		if(media instanceof CDRecordProduct) {
+			return super.equals(media);
+		}
+		return false;
+	}
+
+	
 	
 
 }
