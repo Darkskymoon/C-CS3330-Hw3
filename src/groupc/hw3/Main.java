@@ -1,4 +1,4 @@
-package groupc.mu;
+package groupc.hw3;
 
 public class Main {
 
