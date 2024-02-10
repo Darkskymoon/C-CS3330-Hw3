@@ -19,7 +19,20 @@ public class StockManagerSingleton {
 	//Initializes the InventoryFilePath to the inventory.csv file provided from the assignment
 	//private so that it's path can't be accessed outside the method. Declared final so that the path can't change
 	private final String inventoryFilePath = "./src/groupc/hw3/files/inventory.csv";
-	private ArrayList<MediaProduct> inventory = new ArrayList<MediaProduct>();
+	private ArrayList<MediaProduct> inventory;
+	
+	private StockManagerSingleton() {
+		this.inventory = new ArrayList<MediaProduct>();
+	}
+	
+	public static StockManagerSingleton getInstance() {
+		if(instance == null) {
+			instance = new StockManagerSingleton();
+		}
+		
+		return instance;
+	}
+	
 	
 	/*
 	 * method: initializeStock
@@ -116,10 +129,8 @@ public class StockManagerSingleton {
 	 * @return true if the item was added and false if it was not added.
 	 */
 	public boolean addItem(MediaProduct product) {
-		if(inventory.add(product)) {
-			return true;
-		}
-		return false;
+		inventory.add(product);
+		return true;
 	}
 	
 	/*
