@@ -13,7 +13,7 @@ public class MediaProduct {
 	protected String title;
 	protected double price;
 	protected int year;
-	//TODO: protected Genre genre;
+	protected Genre genre;
 	//////////////////////////////
 	
 	//Constructors////////////////
@@ -24,12 +24,11 @@ public class MediaProduct {
 	
 	
 	//parameterized constructor
-	//TODO: implement genre stuff
-	public MediaProduct(String title, double price, int year) {
+	public MediaProduct(String title, double price, int year, Genre genre) {
 		this.title=title;
 		this.price=price;
 		this.year=year;
-		//this.genre=genre;
+		this.genre=genre;
 	}
 	
 	//copy constructor
@@ -37,7 +36,7 @@ public class MediaProduct {
 		this.title= media.getTitle();
 		this.price= media.getPrice();
 		this.year= media.getYear();
-		//TODO: this.genre = media.getGenre();
+		this.genre = media.getGenre();
 		
 	}
 	///////////////////////////////
@@ -73,6 +72,17 @@ public class MediaProduct {
 	public void setYear(int year) {
 		this.year = year;
 	}
+
+
+	public Genre getGenre() {
+		return genre;
+	}
+
+
+	public void setGenre(Genre genre) {
+		this.genre = genre;
+	}
+	
 	/////////////////////////////
 	
 
