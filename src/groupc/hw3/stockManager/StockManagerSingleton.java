@@ -1,6 +1,10 @@
-package group.hw3.stockmanager;
+package groupc.hw3.stockManager;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Scanner;
 
 import groupc.hw3.media.CDRecordProduct;
 import groupc.hw3.media.MediaProduct;
@@ -13,7 +17,8 @@ public class StockManagerSingleton {
 	
 	//Initializes the InventoryFilePath to the inventory.csv file provided from the assignment
 	//private so that it's path can't be accessed outside the method. Declared final so that the path can't change
-	private final String inventoryFilePath = "../files/inventory.csv";
+	private final String inventoryFilePath = "./src/groupc/hw3/files/inventory.csv";
+	private ArrayList<MediaProduct> inventory = new ArrayList<MediaProduct>();
 	
 	/*
 	 * method: initializeStock
@@ -26,7 +31,40 @@ public class StockManagerSingleton {
 	 */
 	public boolean initializeStock()
 	{
-		return false;
+		Scanner fileScanner = null ; // initializes fileScanner to null
+		
+		try
+		{
+			
+			// Attempt to open the file
+			fileScanner = new Scanner(new FileInputStream(inventoryFilePath));
+			
+			// If file is empty, return false
+			if(!fileScanner.hasNextLine()) {
+				return false;
+			}
+			
+			// Skip over variable / column names
+			fileScanner.nextLine();
+			
+			// While there is a mediaProduct to read in...
+			while(fileScanner.hasNextLine()) {
+				String[] splitted = fileScanner.nextLine().split(",");
+				for (String item : splitted) {
+					System.out.print(item + " ");
+				}
+				System.out.println("\n");
+			}
+			
+			
+			// Return true to indicate file was successfully found and read
+			return true;
+		}
+		catch (FileNotFoundException e)
+		{
+			// If the file could not be found or reading/initialization failed, we return false
+			return false;
+		}
 		
 	}
 	
