@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 import groupc.hw3.media.CDRecordProduct;
+import groupc.hw3.media.Genre;
 import groupc.hw3.media.MediaProduct;
 import groupc.hw3.media.TapeRecordProduct;
 import groupc.hw3.media.VinylRecordProduct;
@@ -49,18 +50,45 @@ public class StockManagerSingleton {
 			
 			// While there is a mediaProduct to read in...
 			while(fileScanner.hasNextLine()) {
+				
+				// split line into respective fields
 				String[] splitted = fileScanner.nextLine().split(",");
-				for (String item : splitted) {
-					System.out.print(item + " ");
+				
+				// Check if file line has invalid length
+				if(splitted.length != 5) {
+					fileScanner.close();
+					return false;
 				}
-				System.out.println("\n");
+				
+				// variables to hold each field
+				String mediaProductType = splitted[0];
+				String title = splitted[1];
+				double price = Double.parseDouble(splitted[2]);
+				int year = Integer.parseInt(splitted[3]);
+				Genre genre = Genre.valueOf(splitted[4]);
+				
+				// Check mediaProductType and create appropriate object based on it
+				if(mediaProductType.equals("CD")) {
+					inventory.add(new CDRecordProduct(title, price, year, genre));
+				} else if(mediaProductType.equals("Vinyl")) {
+					inventory.add(new VinylRecordProduct(title, price, year, genre));
+				} else if(mediaProductType.equals("Tape")) {
+					inventory.add(new TapeRecordProduct(title, price, year, genre));
+				} else {
+					// No valid mediaProduct type given so file read was unsuccessful
+					inventory.clear();
+					fileScanner.close();
+					return false;
+				}
 			}
 			
+			// close fileScanner to prevent memory leak
+			fileScanner.close();
 			
 			// Return true to indicate file was successfully found and read
 			return true;
 		}
-		catch (FileNotFoundException e)
+		catch (Exception e)
 		{
 			// If the file could not be found or reading/initialization failed, we return false
 			return false;
@@ -77,7 +105,8 @@ public class StockManagerSingleton {
 	 * @return true if an update succeeds and false if it does not succeed 
 	 */
 	public boolean updateItemPrice(MediaProduct product, double newPrice) {
-		return false;
+		product.setPrice(newPrice);
+		return true;
 	}
 	
 	/*
@@ -87,6 +116,9 @@ public class StockManagerSingleton {
 	 * @return true if the item was added and false if it was not added.
 	 */
 	public boolean addItem(MediaProduct product) {
+		if(inventory.add(product)) {
+			return true;
+		}
 		return false;
 	}
 	
