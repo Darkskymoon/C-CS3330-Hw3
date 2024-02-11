@@ -143,8 +143,15 @@ public class StockManagerSingleton {
 	 * @return true if the item was removed or false if it was not removed
 	 */
 	public boolean removeItem(MediaProduct product) {
+		//Checks to see if the size of the inventory is 0, in which case, there are no items to remove, hence a failure to remove an item.
+		if(inventory.size()==0)
+		{
+			
+			return false;
+		}
 
-		return false;
+		//removes the product and returns true if it does and false if it does not.
+		return inventory.remove(product);
 	}
 	
 	/*

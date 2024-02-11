@@ -29,6 +29,9 @@ public class Main {
 		VinylRecordProduct vinyl2 = new VinylRecordProduct("The Moss", 29.99, 2015, Genre.ELECTRONIC);
 		manager.addItem(vinyl2);
 		
+		//Tests the removal of vinyl2
+		System.out.println(manager.removeItem(vinyl2));
+		System.out.println(manager.removeItem(vinyl2));
 
 	}
 

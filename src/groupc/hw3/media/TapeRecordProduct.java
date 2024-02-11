@@ -21,14 +21,14 @@ public class TapeRecordProduct extends MediaProduct{
 	}
 	
 	//Checks if an object is a tape and is identical to another tape
-	@Override
-	public boolean equals(Object media) {
-		if(media instanceof TapeRecordProduct) {
-			return super.equals(media);
-		}
-		return false;
-	}
-	
+//	@Override
+//	public boolean equals(Object media) {
+//		if(media instanceof TapeRecordProduct) {
+//			return super.equals(media);
+//		}
+//		return false;
+//	}
+//	
 
 	
 }
