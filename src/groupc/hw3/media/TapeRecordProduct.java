@@ -19,6 +19,14 @@ public class TapeRecordProduct extends MediaProduct{
 		super(media);
 		
 	}
+
+	//ToString method to represent a tape in this format: "tape,title,price,year,genre"
+	@Override
+	public String toString() {
+		return "Tape,"+title+","+price +"," + year +"," + genre;
+	}
+	
+	
 	
 	//Checks if an object is a tape and is identical to another tape
 //	@Override

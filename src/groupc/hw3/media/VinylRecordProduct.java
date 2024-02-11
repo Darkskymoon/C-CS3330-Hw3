@@ -19,6 +19,14 @@ public class VinylRecordProduct extends MediaProduct {
 		super(media);
 		
 	}
+
+	//toString method to represent a vinyl in the following format: "Vinyl,title,price,year,genre"
+	@Override
+	public String toString() {
+		return "Vinyl,"+title+","+price +"," + year +"," + genre;
+	}
+	
+	
 	
 	//Equals function that tests if two pieces of media are the same
 //	@Override

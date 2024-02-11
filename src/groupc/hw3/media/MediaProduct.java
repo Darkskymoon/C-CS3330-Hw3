@@ -86,6 +86,14 @@ public class MediaProduct {
 		this.genre = genre;
 	}
 
+	//ToString to return a string representing a MediaProduct
+	@Override
+	public String toString() {
+		return (title+","+price +"," + year +"," + genre);
+	}
+	
+	
+
 
 	/////////////////////////////
 	

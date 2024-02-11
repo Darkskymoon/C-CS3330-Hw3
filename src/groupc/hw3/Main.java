@@ -29,9 +29,21 @@ public class Main {
 		VinylRecordProduct vinyl2 = new VinylRecordProduct("The Moss", 29.99, 2015, Genre.ELECTRONIC);
 		manager.addItem(vinyl2);
 		
+		//Creates a tape
+		TapeRecordProduct tape1= new TapeRecordProduct("The Mind Electric", 400.0, 2012, Genre.ELECTRONIC);
+		manager.addItem(tape1);
+		
+		//creates a CD
+		CDRecordProduct CD1= new CDRecordProduct("Copacabana (At the Copa)", 32.99, 1985, Genre.POP);
+		manager.addItem(CD1);
+		
+		
 		//Tests the removal of vinyl2
 		System.out.println(manager.removeItem(vinyl2));
 		System.out.println(manager.removeItem(vinyl2));
+		
+		//Tests that saveStock worked correctly
+		manager.saveStock();
 
 	}
 

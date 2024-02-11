@@ -1,7 +1,10 @@
 package groupc.hw3.stockManager;
 
+import java.io.BufferedWriter;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -160,7 +163,32 @@ public class StockManagerSingleton {
 	 * @return true if the save was successful or false if it was not successful
 	 */
 	public boolean saveStock() {
-		return false;
+		//Try catch to avoid file writing errors
+		try
+		{
+			//open the file
+			BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(inventoryFilePath));
+			
+			//write the first line: "Type,Title,Price,Year,Genre" to the file
+			String FirstLine = "Type,Title,Price,Year,Genre\n";
+			bufferedWriter.write(FirstLine);
+			
+			//Write all of the inventory arraylist to the file
+			for(int i=0; i<(inventory.size()); i++){
+				//Writes the inventory item at each index as a toString version
+				bufferedWriter.write(inventory.get(i).toString());
+				//Adds a newline after every inventory item added
+				bufferedWriter.write("\n");
+			}
+			//close the buffered writer
+			bufferedWriter.close();
+			
+		}catch(IOException exception) {
+			return false;
+		}
+		
+		//return true signifying that writing was successful
+		return true;
 	}
 	
 	/*

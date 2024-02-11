@@ -19,6 +19,14 @@ public class CDRecordProduct extends MediaProduct{
 	public CDRecordProduct(CDRecordProduct media) {
 		super(media);
 	}
+
+	//To string method to represent a cd in the following format: "CD,title,price,year,genre"
+	@Override
+	public String toString() {
+		return "CD,"+title+","+price +"," + year +"," + genre;
+	}
+	
+	
 	
 	//Checks if an object is of type CD and if so, checks to see if it is the same CD as another CD
 //	@Override
