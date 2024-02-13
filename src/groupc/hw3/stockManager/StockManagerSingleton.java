@@ -160,7 +160,6 @@ public class StockManagerSingleton {
 		}
 
 		//removes the product and returns true if it does and false if it does not.
-		inventory.remove(10);
 		return inventory.remove(product);
 	}
 	
