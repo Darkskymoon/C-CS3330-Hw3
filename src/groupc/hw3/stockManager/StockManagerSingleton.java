@@ -124,6 +124,9 @@ public class StockManagerSingleton {
 	 * @return true if an update succeeds and false if it does not succeed 
 	 */
 	public boolean updateItemPrice(MediaProduct product, double newPrice) {
+		if(product == null) {
+			return false;
+		}
 		product.setPrice(newPrice);
 		return true;
 	}
@@ -135,6 +138,9 @@ public class StockManagerSingleton {
 	 * @return true if the item was added and false if it was not added.
 	 */
 	public boolean addItem(MediaProduct product) {
+		if(product == null) {
+			return false;
+		}
 		inventory.add(product);
 		return true;
 	}
@@ -154,6 +160,7 @@ public class StockManagerSingleton {
 		}
 
 		//removes the product and returns true if it does and false if it does not.
+		inventory.remove(10);
 		return inventory.remove(product);
 	}
 	
