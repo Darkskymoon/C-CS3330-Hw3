@@ -10,6 +10,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Scanner;
 
+
 import groupc.hw3.media.CDRecordProduct;
 import groupc.hw3.media.Genre;
 import groupc.hw3.media.MediaProduct;
@@ -203,6 +204,7 @@ public class StockManagerSingleton {
 	 * @param maxPrice The maximum price of mediaProducts that the user wants to view
 	 * @return ArrayList representing all of the media products that are below the price passed into the method
 	 */
+	
 	public ArrayList<MediaProduct> getMediaProductBelowPrice(int maxPrice){
 		return null;
 	}
@@ -213,9 +215,23 @@ public class StockManagerSingleton {
 	 * @param productList The list of products that the user wants to print
 	 * 
 	 */
+	//handle case where an arraylist is used as an argument
 	public void printListOfMediaProduct(ArrayList<MediaProduct> productList) {
+		// if product list has an input
+		for (MediaProduct mediaProduct : productList) {
+			System.out.println(mediaProduct.toString());
+		}
 		return;
-	}
+}
+	//handle case where no argument is input, in this case,
+	//method will reference full arraylist in this class
+	public void printListOfMediaProduct() {
+		// if product list does not have an input, print out all items
+		for (MediaProduct mediaProduct : inventory) {
+			System.out.println(mediaProduct.toString());
+		}
+		return;
+}
 	
 	/*
 	 * method: getVinylRecordList
@@ -244,7 +260,7 @@ public class StockManagerSingleton {
 	 * @return A list representing all of the media products that are TAPES
 	 */
 	public ArrayList<TapeRecordProduct> getTapeREcordList(ArrayList<MediaProduct> productList){
+		
 		return null;
 	}
-
 }
