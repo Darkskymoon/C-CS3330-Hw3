@@ -216,7 +216,7 @@ public class StockManagerSingleton {
 			if (mediaProduct.getPrice() <= maxPrice){
 
 				// Add product to return list if it matches query
-				inBudgetMediaProducts.add(mediaProduct);
+				inBudgetMediaProducts.add(new MediaProduct(mediaProduct));
 			}
 		
 		}
