@@ -53,6 +53,9 @@ public class Main {
 		//tests GetCDRecordsList output
 		System.out.println(manager.getCDRecordsList());
 		
+		//tests getTapeREcordList output
+		System.out.println(manager.getTapeREcordList());
+		
 		//Tests the removal of vinyl2
 		System.out.println(manager.removeItem(vinyl2));
 		System.out.println(manager.removeItem(vinyl2));
