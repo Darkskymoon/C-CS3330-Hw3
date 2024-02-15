@@ -206,13 +206,22 @@ public class StockManagerSingleton {
 	 */
 	
 	public ArrayList<MediaProduct> getMediaProductBelowPrice(int maxPrice){
+		// Initialize array lis for the matching products
 		ArrayList<MediaProduct> inBudgetMediaProducts = new ArrayList<MediaProduct>();
+		
+		// Check all products in inventory
 		for (MediaProduct mediaProduct : inventory ) {
+
+
 			if (mediaProduct.getPrice() <= maxPrice){
+
+				// Add product to return list if it query
 				inBudgetMediaProducts.add(mediaProduct);
 			}
 		
 		}
+
+		// Return list that satisfied query
 		return inBudgetMediaProducts;
 	}
 	
