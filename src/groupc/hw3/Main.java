@@ -52,10 +52,12 @@ public class Main {
 		//Tests the removal of vinyl2
 		System.out.println(manager.removeItem(vinyl2));
 		System.out.println(manager.removeItem(vinyl2));
-		
+
 		//Tests that saveStock worked correctly
 		manager.saveStock();
 
+		// Prints list of products with price <= 13
+		manager.printListOfMediaProduct(manager.getMediaProductBelowPrice(13));
 	}
 
 }
