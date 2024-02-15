@@ -288,21 +288,26 @@ public class StockManagerSingleton {
 	        throw new IllegalArgumentException("Product list cannot be null");
 	    }
 		ArrayList<CDRecordProduct> cdList = new ArrayList<>();
+		// iterate through productList
 		for (MediaProduct mediaProduct : productList) {
+			// if current index is a cd, add a copy of it to cdList
 			if (mediaProduct.getClass() == CDRecordProduct.class) {
-				cdList.add((CDRecordProduct) mediaProduct);
+				cdList.add(new CDRecordProduct((CDRecordProduct) mediaProduct));
 			}
 		}
 		return cdList;
 	}
 	public ArrayList<CDRecordProduct> getCDRecordsList() { 
 		ArrayList<CDRecordProduct> cdList = new ArrayList<>();
+	    // null input handling
 	    if (inventory.size()==0) {
 	        return cdList;
 	    }
+	    // iterate through inventory
 		for (MediaProduct mediaProduct : inventory) {
+			// if current index is a cd, add a copy of it to cdList
 			if (mediaProduct.getClass() == CDRecordProduct.class) {
-				cdList.add((CDRecordProduct) mediaProduct);
+				cdList.add(new CDRecordProduct((CDRecordProduct) mediaProduct));
 			}
 		}
 		return cdList;
@@ -323,9 +328,11 @@ public class StockManagerSingleton {
 	        throw new IllegalArgumentException("Product list cannot be null");
 	    }
 		ArrayList<TapeRecordProduct> tapeList = new ArrayList<>();
+		// iterate through productList
 		for (MediaProduct mediaProduct : productList) {
-			if (mediaProduct.getClass() == CDRecordProduct.class) {
-				tapeList.add((TapeRecordProduct) mediaProduct);
+			// if current index is a tape, add a copy of it to tapeList
+			if (mediaProduct.getClass() == TapeRecordProduct.class) {
+				tapeList.add(new TapeRecordProduct((TapeRecordProduct) mediaProduct));
 			}
 		}
 		return tapeList;
@@ -333,12 +340,15 @@ public class StockManagerSingleton {
 	// if input is empty, reference list in 
 	public ArrayList<TapeRecordProduct> getTapeREcordList() {
 		ArrayList<TapeRecordProduct> tapeList = new ArrayList<>();
+		// handle return if inventory is empty
 	    if (inventory.size()==0) {
 	        return tapeList;
 	    }
+	    // iterate through inventory
 		for (MediaProduct mediaProduct : inventory) {
+			// if current index is a tape, add a copy of it to tapeList
 			if (mediaProduct.getClass() == TapeRecordProduct.class) {
-				tapeList.add((TapeRecordProduct) mediaProduct);
+				tapeList.add(new TapeRecordProduct((TapeRecordProduct) mediaProduct));
 			}
 		}
 		return tapeList;
