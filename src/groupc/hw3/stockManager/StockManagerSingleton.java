@@ -256,15 +256,21 @@ public class StockManagerSingleton {
 	 * @return A list representing all of the media products that are VINYLS
 	 */
 	public ArrayList<VinylRecordProduct> getVinylRecordList(ArrayList<MediaProduct> productList){
+		// Initialize array list for the matching products
 		ArrayList<VinylRecordProduct> vinylRecords = new ArrayList<VinylRecordProduct>();
 		
+		// Check all products in inventory
 		for(MediaProduct product : inventory){
+
+			// If product is vinyl
 			if (product instanceof VinylRecordProduct) {
 				
+				// Adds a copy of the vinyl product to the list
 				vinylRecords.add(new VinylRecordProduct((VinylRecordProduct)product));
 			}
 		};
 		
+		// Return list of all vinyls
 		return vinylRecords;
 	}
 	
