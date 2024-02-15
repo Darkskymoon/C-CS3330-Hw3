@@ -250,7 +250,13 @@ public class StockManagerSingleton {
 	 * @return A list representing all of the media products that are CDS
 	 */
 	public ArrayList<CDRecordProduct> getCDRecordsList(ArrayList<MediaProduct> productList){
-		return null;
+		ArrayList<CDRecordProduct> cdRecords = new ArrayList<CDRecordProduct>();
+		inventory.forEach(product -> {
+			if (product instanceof CDRecordProduct) {
+				cdRecords.add((CDRecordProduct)product);
+			}
+		});
+		return cdRecords;
 	}
 	
 	/*
