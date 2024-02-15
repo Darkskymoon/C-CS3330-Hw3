@@ -280,15 +280,27 @@ public class StockManagerSingleton {
 	 * @param productList the list of products passed by the user
 	 * @return A list representing all of the media products that are CDS
 	 */
+	// return arrayList of CDs
+	// if appropriate input exists, use input
 	public ArrayList<CDRecordProduct> getCDRecordsList(ArrayList<MediaProduct> productList){
-		ArrayList<CDRecordProduct> cdRecords = new ArrayList<CDRecordProduct>();
-		inventory.forEach(product -> {
-			if (product instanceof CDRecordProduct) {
-				cdRecords.add((CDRecordProduct)product);
+		ArrayList<CDRecordProduct> cdList = new ArrayList<>();
+		for (MediaProduct mediaProduct : productList) {
+			if (mediaProduct.getClass() == CDRecordProduct.class) {
+				cdList.add((CDRecordProduct) mediaProduct);
 			}
-		});
-		return cdRecords;
+		}
+		return cdList;
 	}
+	public ArrayList<CDRecordProduct> getCDRecordsList() { 
+		ArrayList<CDRecordProduct> cdList = new ArrayList<>();
+		for (MediaProduct mediaProduct : inventory) {
+			if (mediaProduct.getClass() == CDRecordProduct.class) {
+				cdList.add((CDRecordProduct) mediaProduct);
+			}
+		}
+		return cdList;
+	}
+	
 	
 	/*
 	 * method: getTapeRecordList
@@ -296,8 +308,25 @@ public class StockManagerSingleton {
 	 * @param productList the list of products passed by the user
 	 * @return A list representing all of the media products that are TAPES
 	 */
-	public ArrayList<TapeRecordProduct> getTapeRecordList(ArrayList<MediaProduct> productList){
-		
-		return null;
+	// return arrayList of Tapes
+	// if appropriate input exists, use input
+	public ArrayList<TapeRecordProduct> getTapeREcordList(ArrayList<MediaProduct> productList){
+		ArrayList<TapeRecordProduct> tapeList = new ArrayList<>();
+		for (MediaProduct mediaProduct : productList) {
+			if (mediaProduct.getClass() == CDRecordProduct.class) {
+				tapeList.add((TapeRecordProduct) mediaProduct);
+			}
+		}
+		return tapeList;
+	}
+	// if input is empty, reference list in 
+	public ArrayList<TapeRecordProduct> getTapeREcordList() {
+		ArrayList<TapeRecordProduct> tapeList = new ArrayList<>();
+		for (MediaProduct mediaProduct : inventory) {
+			if (mediaProduct.getClass() == TapeRecordProduct.class) {
+				tapeList.add((TapeRecordProduct) mediaProduct);
+			}
+		}
+		return tapeList;
 	}
 }
