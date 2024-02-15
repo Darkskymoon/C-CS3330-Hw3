@@ -206,7 +206,7 @@ public class StockManagerSingleton {
 	 */
 	
 	public ArrayList<MediaProduct> getMediaProductBelowPrice(int maxPrice){
-		// Initialize array lis for the matching products
+		// Initialize array list for the matching products
 		ArrayList<MediaProduct> inBudgetMediaProducts = new ArrayList<MediaProduct>();
 		
 		// Check all products in inventory
@@ -215,7 +215,7 @@ public class StockManagerSingleton {
 
 			if (mediaProduct.getPrice() <= maxPrice){
 
-				// Add product to return list if it query
+				// Add product to return list if it matches query
 				inBudgetMediaProducts.add(mediaProduct);
 			}
 		
@@ -296,7 +296,7 @@ public class StockManagerSingleton {
 	 * @param productList the list of products passed by the user
 	 * @return A list representing all of the media products that are TAPES
 	 */
-	public ArrayList<TapeRecordProduct> getTapeREcordList(ArrayList<MediaProduct> productList){
+	public ArrayList<TapeRecordProduct> getTapeRecordList(ArrayList<MediaProduct> productList){
 		
 		return null;
 	}
