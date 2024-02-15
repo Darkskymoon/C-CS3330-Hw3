@@ -256,7 +256,16 @@ public class StockManagerSingleton {
 	 * @return A list representing all of the media products that are VINYLS
 	 */
 	public ArrayList<VinylRecordProduct> getVinylRecordList(ArrayList<MediaProduct> productList){
-		return null;
+		ArrayList<VinylRecordProduct> vinylRecords = new ArrayList<VinylRecordProduct>();
+		
+		for(MediaProduct product : inventory){
+			if (product instanceof VinylRecordProduct) {
+				
+				vinylRecords.add(new VinylRecordProduct((VinylRecordProduct)product));
+			}
+		};
+		
+		return vinylRecords;
 	}
 	
 	/*
