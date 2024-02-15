@@ -283,6 +283,10 @@ public class StockManagerSingleton {
 	// return arrayList of CDs
 	// if appropriate input exists, use input
 	public ArrayList<CDRecordProduct> getCDRecordsList(ArrayList<MediaProduct> productList){
+	    // null input handling
+		if (productList == null || productList.size() == 0) {
+	        throw new IllegalArgumentException("Product list cannot be null");
+	    }
 		ArrayList<CDRecordProduct> cdList = new ArrayList<>();
 		for (MediaProduct mediaProduct : productList) {
 			if (mediaProduct.getClass() == CDRecordProduct.class) {
@@ -293,6 +297,9 @@ public class StockManagerSingleton {
 	}
 	public ArrayList<CDRecordProduct> getCDRecordsList() { 
 		ArrayList<CDRecordProduct> cdList = new ArrayList<>();
+	    if (inventory.size()==0) {
+	        return cdList;
+	    }
 		for (MediaProduct mediaProduct : inventory) {
 			if (mediaProduct.getClass() == CDRecordProduct.class) {
 				cdList.add((CDRecordProduct) mediaProduct);
@@ -311,6 +318,10 @@ public class StockManagerSingleton {
 	// return arrayList of Tapes
 	// if appropriate input exists, use input
 	public ArrayList<TapeRecordProduct> getTapeREcordList(ArrayList<MediaProduct> productList){
+	    // null input handling
+		if (productList == null) {
+	        throw new IllegalArgumentException("Product list cannot be null");
+	    }
 		ArrayList<TapeRecordProduct> tapeList = new ArrayList<>();
 		for (MediaProduct mediaProduct : productList) {
 			if (mediaProduct.getClass() == CDRecordProduct.class) {
@@ -322,6 +333,9 @@ public class StockManagerSingleton {
 	// if input is empty, reference list in 
 	public ArrayList<TapeRecordProduct> getTapeREcordList() {
 		ArrayList<TapeRecordProduct> tapeList = new ArrayList<>();
+	    if (inventory.size()==0) {
+	        return tapeList;
+	    }
 		for (MediaProduct mediaProduct : inventory) {
 			if (mediaProduct.getClass() == TapeRecordProduct.class) {
 				tapeList.add((TapeRecordProduct) mediaProduct);
