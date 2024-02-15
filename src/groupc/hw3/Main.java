@@ -47,7 +47,11 @@ public class Main {
 		CDRecordProduct CD1= new CDRecordProduct("Copacabana (At the Copa)", 32.99, 1985, Genre.POP);
 		manager.addItem(CD1);
 		
+		//tests printListOfMediaProduct output
+		manager.printListOfMediaProduct();
 		
+		//tests GetCDRecordsList output
+		System.out.println(manager.getCDRecordsList());
 		
 		//Tests the removal of vinyl2
 		System.out.println(manager.removeItem(vinyl2));
