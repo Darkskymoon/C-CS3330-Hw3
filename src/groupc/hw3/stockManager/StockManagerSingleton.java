@@ -206,7 +206,14 @@ public class StockManagerSingleton {
 	 */
 	
 	public ArrayList<MediaProduct> getMediaProductBelowPrice(int maxPrice){
-		return null;
+		ArrayList<MediaProduct> inBudgetMediaProducts = new ArrayList<MediaProduct>();
+		for (MediaProduct mediaProduct : inventory ) {
+			if (mediaProduct.getPrice() <= maxPrice){
+				inBudgetMediaProducts.add(mediaProduct);
+			}
+		
+		}
+		return inBudgetMediaProducts;
 	}
 	
 	/*
