@@ -1,8 +1,12 @@
 package groupc.hw3;
 
 import groupc.hw3.stockManager.StockManagerSingleton;
+
+import java.util.ArrayList;
+
 import groupc.hw3.media.CDRecordProduct;
 import groupc.hw3.media.Genre;
+import groupc.hw3.media.MediaProduct;
 import groupc.hw3.media.TapeRecordProduct;
 import groupc.hw3.media.VinylRecordProduct;
 
@@ -57,22 +61,34 @@ public class Main {
 		CDRecordProduct CD1= new CDRecordProduct("Copacabana (At the Copa)", 32.99, 1985, Genre.POP);
 		System.out.println("\t"+manager.addItem(CD1));
 		
+		
+		//Creates an arrayList of the above created media types:
+		ArrayList<MediaProduct> testList = new ArrayList<MediaProduct>();
+		testList.add(tape1);
+		testList.add(CD1);
+		testList.add(vinyl2);
+		testList.add(vinyl1);
+		
 		//tests printListOfMediaProduct output
 		System.out.println("\n --------------------------Printing a list of the media products--------------------------\n");
 		manager.printListOfMediaProduct();
 		System.out.println("-----------------------------------------------------------------------------------------\n");
 		
 		//tests GetCDRecordsList output
-		System.out.println("\n------------------------------Printing the list of CDs-----------------------------------\n");
-		System.out.println(manager.getCDRecordsList());
+		System.out.println("\n------------------------------Printing the list of CDs when...-----------------------------------\n");
+		System.out.println("No valid list is passed in: "+ manager.getCDRecordsList(null));
+		System.out.println("Valid List is passed in: "+ manager.getCDRecordsList(testList));
 		
 		//tests getTapeRecordList output
-		System.out.println("\n------------------------------Printing the list of Tapes-----------------------------------\n");
-		System.out.println(manager.getTapeRecordList());
+		System.out.println("\n------------------------------Printing the list of Tapes when...-----------------------------------\n");
+		System.out.println("No valid list is passed in: "+manager.getTapeRecordList(null));
+		System.out.println("valid list is passed in: "+manager.getTapeRecordList(testList));
 		
 		//test getVinylRecordsList output
-		System.out.println("\n------------------------------Printing the list of Vinyls-----------------------------------\n");
-		System.out.println(manager.getVinylRecordList(null));
+		System.out.println("\n------------------------------Printing the list of Vinyls when...-----------------------------------\n");
+		System.out.println("No valid list is passed in: "+ manager.getVinylRecordList(null));
+		System.out.println("valid list is passed in: "+ manager.getVinylRecordList(testList));
+		
 		System.out.println("----------------------------------------------------------------------------------------------");
 		
 		//Tests the removal of vinyl2
