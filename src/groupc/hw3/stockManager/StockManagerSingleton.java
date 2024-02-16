@@ -23,7 +23,7 @@ public class StockManagerSingleton {
 	
 	//Initializes the InventoryFilePath to the inventory.csv file provided from the assignment
 	//private so that it's path can't be accessed outside the method. Declared final so that the path can't change
-	private final String inventoryFilePath = "./src/groupc/hw3/files/inventory.csv";
+	private final String inventoryFilePath = "./files/inventory.csv";
 	
 	//an array list to hold all of the media Objects
 	private ArrayList<MediaProduct> inventory;
