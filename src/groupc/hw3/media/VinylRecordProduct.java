@@ -3,8 +3,8 @@ package groupc.hw3.media;
  * Subclass of the mediaProduct class
  */
 public class VinylRecordProduct extends MediaProduct {
-	//Base constructor
-	public VinylRecordProduct() {
+	//Base constructor - shouldn't be used
+	private VinylRecordProduct() {
 		// TODO
 	}
 	

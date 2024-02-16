@@ -21,8 +21,7 @@ public class MediaProduct {
 	
 	//Constructors////////////////
 	//Base Constructor
-	public MediaProduct() {
-		//TODO
+	protected MediaProduct() {
 	}
 	
 	

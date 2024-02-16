@@ -3,9 +3,9 @@ package groupc.hw3.media;
  * Subclass of MediaProduct that represents a tape product
  */
 public class TapeRecordProduct extends MediaProduct{
-	//base constructor
-	public TapeRecordProduct() {
-		// TODO 
+	//base constructor - shouldn't be used
+	private TapeRecordProduct() {
+		
 	}
 	
 	//parameterized constructor

@@ -4,9 +4,9 @@ package groupc.hw3.media;
  * Subclass of the MediaProduct Class.
  */
 public class CDRecordProduct extends MediaProduct{
-	//Base constructor
-	public CDRecordProduct() {
-		// TODO 
+	//Base constructor - shouldn't be used
+	private CDRecordProduct() {
+
 	}
 	
 	//Parameterized Constructor
