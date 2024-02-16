@@ -277,6 +277,7 @@ public class StockManagerSingleton {
 		return vinylRecords;
 	}
 	
+	
 	/*
 	 * method: getCDRecordsList
 	 * This method gets all of the media products that are CDS
@@ -286,37 +287,20 @@ public class StockManagerSingleton {
 	// return arrayList of CDs
 	// if appropriate input exists, use input
 	public ArrayList<CDRecordProduct> getCDRecordsList(ArrayList<MediaProduct> productList){
-	    // null input handling
+		ArrayList<CDRecordProduct> cdRecords = new ArrayList<CDRecordProduct>();
+		// null input handling
 		if (productList == null || productList.size() == 0) {
 	        return null;
 	    }
-		ArrayList<CDRecordProduct> cdList = new ArrayList<>();
 		// iterate through productList
 		for (MediaProduct mediaProduct : productList) {
 			// if current index is a cd, add a copy of it to cdList
-			if (mediaProduct.getClass() == CDRecordProduct.class) {
-				cdList.add(new CDRecordProduct((CDRecordProduct) mediaProduct));
+			if (mediaProduct instanceof CDRecordProduct) {
+				cdRecords.add(new CDRecordProduct((CDRecordProduct) mediaProduct));
 			}
 		}
-		return cdList;
+		return cdRecords;
 	}
-	
-//	public ArrayList<CDRecordProduct> getCDRecordsList() { 
-//		ArrayList<CDRecordProduct> cdList = new ArrayList<>();
-//	    // null input handling
-//	    if (inventory.size()==0) {
-//	        return cdList;
-//	    }
-//	    // iterate through inventory
-//		for (MediaProduct mediaProduct : inventory) {
-//			// if current index is a cd, add a copy of it to cdList
-//			if (mediaProduct.getClass() == CDRecordProduct.class) {
-//				cdList.add(new CDRecordProduct((CDRecordProduct) mediaProduct));
-//			}
-//		}
-//		return cdList;
-//	}
-//	
 	
 	/*
 	 * method: getTapeRecordList
@@ -327,36 +311,18 @@ public class StockManagerSingleton {
 	// return arrayList of Tapes
 	// if appropriate input exists, use input
 	public ArrayList<TapeRecordProduct> getTapeRecordList(ArrayList<MediaProduct> productList){
-	    // null input handling
+		ArrayList<TapeRecordProduct> tapeRecords = new ArrayList<>();
+		// null input handling
 		if (productList == null) {
 	        return null;
 	    }
-		ArrayList<TapeRecordProduct> tapeList = new ArrayList<>();
 		// iterate through productList
 		for (MediaProduct mediaProduct : productList) {
 			// if current index is a tape, add a copy of it to tapeList
-			if (mediaProduct.getClass() == TapeRecordProduct.class) {
-				tapeList.add(new TapeRecordProduct((TapeRecordProduct) mediaProduct));
+			if (mediaProduct instanceof TapeRecordProduct) {
+				tapeRecords.add(new TapeRecordProduct((TapeRecordProduct) mediaProduct));
 			}
 		}
-		return tapeList;
+		return tapeRecords;
 	}
-	
-	
-//	// if input is empty, reference list in 
-//	public ArrayList<TapeRecordProduct> getTapeRecordList() {
-//		ArrayList<TapeRecordProduct> tapeList = new ArrayList<>();
-//		// handle return if inventory is empty
-//	    if (inventory.size()==0) {
-//	        return tapeList;
-//	    }
-//	    // iterate through inventory
-//		for (MediaProduct mediaProduct : inventory) {
-//			// if current index is a tape, add a copy of it to tapeList
-//			if (mediaProduct.getClass() == TapeRecordProduct.class) {
-//				tapeList.add(new TapeRecordProduct((TapeRecordProduct) mediaProduct));
-//			}
-//		}
-//		return tapeList;
-//	}
 }
