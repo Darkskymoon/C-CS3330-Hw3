@@ -259,9 +259,14 @@ public class StockManagerSingleton {
 		// Initialize array list for the matching products
 		ArrayList<VinylRecordProduct> vinylRecords = new ArrayList<VinylRecordProduct>();
 		
+		if (productList == null || productList.size() == 0) {
+			return null;
+	    }
+		
 		// Check all products in inventory
-		for(MediaProduct product : inventory){
-
+		int i = 0;
+		for(MediaProduct product : productList){
+			System.out.println(i);
 			// If product is vinyl
 			if (product instanceof VinylRecordProduct) {
 				
