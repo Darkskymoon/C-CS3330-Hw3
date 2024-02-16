@@ -322,7 +322,7 @@ public class StockManagerSingleton {
 	 */
 	// return arrayList of Tapes
 	// if appropriate input exists, use input
-	public ArrayList<TapeRecordProduct> getTapeREcordList(ArrayList<MediaProduct> productList){
+	public ArrayList<TapeRecordProduct> getTapeRecordList(ArrayList<MediaProduct> productList){
 	    // null input handling
 		if (productList == null) {
 	        throw new IllegalArgumentException("Product list cannot be null");
@@ -338,7 +338,7 @@ public class StockManagerSingleton {
 		return tapeList;
 	}
 	// if input is empty, reference list in 
-	public ArrayList<TapeRecordProduct> getTapeREcordList() {
+	public ArrayList<TapeRecordProduct> getTapeRecordList() {
 		ArrayList<TapeRecordProduct> tapeList = new ArrayList<>();
 		// handle return if inventory is empty
 	    if (inventory.size()==0) {
