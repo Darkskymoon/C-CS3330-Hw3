@@ -264,9 +264,7 @@ public class StockManagerSingleton {
 	    }
 		
 		// Check all products in inventory
-		int i = 0;
 		for(MediaProduct product : productList){
-			System.out.println(i);
 			// If product is vinyl
 			if (product instanceof VinylRecordProduct) {
 				
