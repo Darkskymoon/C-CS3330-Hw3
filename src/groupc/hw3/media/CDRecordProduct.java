@@ -4,11 +4,6 @@ package groupc.hw3.media;
  * Subclass of the MediaProduct Class.
  */
 public class CDRecordProduct extends MediaProduct{
-	//Base constructor - shouldn't be used
-	private CDRecordProduct() {
-
-	}
-	
 	//Parameterized Constructor
 	public CDRecordProduct(String title, double price, int year, Genre genre) {
 		//Initializes the CD using the superclass constructor
@@ -26,9 +21,4 @@ public class CDRecordProduct extends MediaProduct{
 		return "CD,"+title+","+price +"," + year +"," + genre;
 	}
 	
-	
-
-	
-	
-
 }

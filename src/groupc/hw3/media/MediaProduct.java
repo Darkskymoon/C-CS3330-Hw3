@@ -1,7 +1,5 @@
 package groupc.hw3.media;
 
-import java.util.Objects;
-
 /**
  * Class: MediaProduct
  * This is the parent class of all of the different media products
@@ -17,12 +15,7 @@ public class MediaProduct {
 	protected int year;
 	protected Genre genre;
 	//////////////////////////////
-	
-	//Constructors////////////////
-	//Base Constructor
-	protected MediaProduct() {
-	}
-	
+
 	
 	//parameterized constructor
 	public MediaProduct(String title, double price, int year, Genre genre) {
@@ -90,13 +83,4 @@ public class MediaProduct {
 		return (title+","+price +"," + year +"," + genre);
 	}
 	
-	
-
-
-	/////////////////////////////
-	
-	
-	
-
-
 }

@@ -3,10 +3,7 @@ package groupc.hw3.media;
  * Subclass of the mediaProduct class
  */
 public class VinylRecordProduct extends MediaProduct {
-	//Base constructor - shouldn't be used
-	private VinylRecordProduct() {
-		// TODO
-	}
+
 	
 	//Parameterized Constructor
 	public VinylRecordProduct(String title, double price, int year, Genre genre) {
@@ -26,12 +23,4 @@ public class VinylRecordProduct extends MediaProduct {
 		return "Vinyl,"+title+","+price +"," + year +"," + genre;
 	}
 	
-	
-
-	
-
-	
-	
-	
-
 }
