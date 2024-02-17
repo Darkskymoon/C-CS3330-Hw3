@@ -110,6 +110,13 @@ public class Main {
 		
 		System.out.println("\n-------------------------Printing a list of products with price <=1000------------------------");
 		manager.printListOfMediaProduct(manager.getMediaProductBelowPrice(1000));
+		
+		// Clean up
+		manager.removeItem(vinyl1);
+		manager.removeItem(CD1);
+		manager.removeItem(tape1);
+		
+		manager.saveStock();
 	}
 
 }
