@@ -251,16 +251,6 @@ public class StockManagerSingleton {
 		return;
 	}
 	
-	//handle case where no argument is input, in this case,
-	//method will reference full arraylist in this class
-	public void printListOfMediaProduct() {
-		// if product list does not have an input, print out all items
-		for (MediaProduct mediaProduct : inventory) {
-			System.out.println(mediaProduct.toString());
-		}
-		return;
-	}
-	
 	/**
 	 * method: getVinylRecordList
 	 * This method gets all of the media products that are VINYLS 
