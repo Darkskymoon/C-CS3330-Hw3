@@ -71,7 +71,7 @@ public class Main {
 		
 		//tests printListOfMediaProduct output
 		System.out.println("\n --------------------------Printing a list of the media products--------------------------\n");
-		manager.printListOfMediaProduct();
+		manager.printListOfMediaProduct(testList);
 		System.out.println("-----------------------------------------------------------------------------------------\n");
 		
 		//tests GetCDRecordsList output
