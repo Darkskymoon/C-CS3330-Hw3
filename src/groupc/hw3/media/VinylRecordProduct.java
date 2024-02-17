@@ -27,15 +27,7 @@ public class VinylRecordProduct extends MediaProduct {
 	}
 	
 	
-	
-	//Equals function that tests if two pieces of media are the same
-//	@Override
-//	public boolean equals(Object media) {
-//		if(media instanceof VinylRecordProduct) {
-//			return super.equals(media);
-//		}
-//		return false;
-//	}
+
 	
 
 	

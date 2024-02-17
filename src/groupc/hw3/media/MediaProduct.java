@@ -97,22 +97,6 @@ public class MediaProduct {
 	
 	
 	
-	//equals function to test if two pieces of media are the same
-//	public boolean equals(Object media) {
-//		//casts the media Object as a MediaProduct
-//		MediaProduct product = (MediaProduct)media;
-//		//Compares the two objects and if title, genre, price, and year are the same, then the objects are the same
-//		if(this.title == product.getTitle() 
-//				&& this.genre == product.getGenre()
-//				&& this.price == product.getPrice() 
-//				&& this.year == product.getYear()) {
-//			return true;
-//		}
-//		return false;
-//	}
-	
-	
-	
 
 
 }
