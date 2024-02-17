@@ -204,7 +204,7 @@ public class StockManagerSingleton {
 	 * @param maxPrice The maximum price of mediaProducts that the user wants to view
 	 * @return ArrayList representing all of the media products that are below the price passed into the method
 	 */
-	
+
 	public ArrayList<MediaProduct> getMediaProductBelowPrice(int maxPrice){
 		// Initialize array list for the matching products
 		ArrayList<MediaProduct> inBudgetMediaProducts = new ArrayList<MediaProduct>();
@@ -212,12 +212,23 @@ public class StockManagerSingleton {
 		// Check all products in inventory
 		for (MediaProduct mediaProduct : inventory ) {
 
-			
+			// Add copy of product to return list if its price is <= maxPrice
 			if (mediaProduct.getPrice() <= maxPrice){
 				
-				// Add product to return list if it matches query
+				// Tries to maintain class type when adding copy of product, adds it as mediaProduct if doesn't match any of the conditions
+				if (mediaProduct instanceof VinylRecordProduct) {
+					inBudgetMediaProducts.add(new VinylRecordProduct((VinylRecordProduct)mediaProduct));
+				}
+				else if (mediaProduct instanceof CDRecordProduct) {
+					inBudgetMediaProducts.add(new CDRecordProduct((CDRecordProduct)mediaProduct));
+				}
+				else if (mediaProduct instanceof TapeRecordProduct) {
+					inBudgetMediaProducts.add(new TapeRecordProduct((TapeRecordProduct)mediaProduct));
+				}
+				else {
 					inBudgetMediaProducts.add(new MediaProduct(mediaProduct));
-							}
+				}
+			}
 		
 		}
 
