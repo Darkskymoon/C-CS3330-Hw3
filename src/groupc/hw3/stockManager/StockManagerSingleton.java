@@ -41,7 +41,7 @@ public class StockManagerSingleton {
 	}
 	
 	
-	/*
+	/**
 	 * method: initializeStock
 	 * This method initializes the StockManager by 
 	 * reading in the inventory data from the file found in inventoryFilePath
@@ -117,7 +117,7 @@ public class StockManagerSingleton {
 	}
 	
 	
-	/*
+	/**
 	 * method: updateItemPrice
 	 * This method updates a media product price to an updated price.
 	 * @param product product to update
@@ -132,7 +132,7 @@ public class StockManagerSingleton {
 		return true;
 	}
 	
-	/*
+	/**
 	 * method: addItem
 	 * This method adds a new media object to the manager inventory
 	 * @param product The new MediaProduct to add to the manager
@@ -146,7 +146,7 @@ public class StockManagerSingleton {
 		return true;
 	}
 	
-	/*
+	/**
 	 * method: removeItem
 	 * This method removes a media product from the inventory
 	 * @param product The product to remove from the catalog
@@ -164,7 +164,7 @@ public class StockManagerSingleton {
 		return inventory.remove(product);
 	}
 	
-	/*
+	/**
 	 * method: saveStock
 	 * This method updates the inventory in the "inventoryFilePath" csv file and saves it by overwriting the existing file
 	 * @return true if the save was successful or false if it was not successful
@@ -198,7 +198,7 @@ public class StockManagerSingleton {
 		return true;
 	}
 	
-	/*
+	/**
 	 * Method: getMediaProductBelowPrice
 	 * This method creates a list of all of the products below a specified price
 	 * @param maxPrice The maximum price of mediaProducts that the user wants to view
@@ -212,12 +212,12 @@ public class StockManagerSingleton {
 		// Check all products in inventory
 		for (MediaProduct mediaProduct : inventory ) {
 
-
+			
 			if (mediaProduct.getPrice() <= maxPrice){
-
+				
 				// Add product to return list if it matches query
-				inBudgetMediaProducts.add(new MediaProduct(mediaProduct));
-			}
+					inBudgetMediaProducts.add(new MediaProduct(mediaProduct));
+							}
 		
 		}
 
@@ -225,7 +225,7 @@ public class StockManagerSingleton {
 		return inBudgetMediaProducts;
 	}
 	
-	/*
+	/**
 	 * method: printListOfMediaProduct
 	 * This method prints all of the products in the media product list
 	 * @param productList The list of products that the user wants to print
@@ -238,7 +238,8 @@ public class StockManagerSingleton {
 			System.out.println(mediaProduct.toString());
 		}
 		return;
-}
+	}
+	
 	//handle case where no argument is input, in this case,
 	//method will reference full arraylist in this class
 	public void printListOfMediaProduct() {
@@ -247,9 +248,9 @@ public class StockManagerSingleton {
 			System.out.println(mediaProduct.toString());
 		}
 		return;
-}
+	}
 	
-	/*
+	/**
 	 * method: getVinylRecordList
 	 * This method gets all of the media products that are VINYLS 
 	 * @param productList the list of products passed by the user
@@ -278,14 +279,12 @@ public class StockManagerSingleton {
 	}
 	
 	
-	/*
+	/**
 	 * method: getCDRecordsList
 	 * This method gets all of the media products that are CDS
 	 * @param productList the list of products passed by the user
 	 * @return A list representing all of the media products that are CDS
 	 */
-	// return arrayList of CDs
-	// if appropriate input exists, use input
 	public ArrayList<CDRecordProduct> getCDRecordsList(ArrayList<MediaProduct> productList){
 		ArrayList<CDRecordProduct> cdRecords = new ArrayList<CDRecordProduct>();
 		// null input handling
@@ -302,14 +301,12 @@ public class StockManagerSingleton {
 		return cdRecords;
 	}
 	
-	/*
+	/**
 	 * method: getTapeRecordList
 	 * This method gets all of the media products that are TAPES
 	 * @param productList the list of products passed by the user
 	 * @return A list representing all of the media products that are TAPES
 	 */
-	// return arrayList of Tapes
-	// if appropriate input exists, use input
 	public ArrayList<TapeRecordProduct> getTapeRecordList(ArrayList<MediaProduct> productList){
 		ArrayList<TapeRecordProduct> tapeRecords = new ArrayList<>();
 		// null input handling

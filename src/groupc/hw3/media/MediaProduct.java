@@ -2,14 +2,13 @@ package groupc.hw3.media;
 
 import java.util.Objects;
 
-/*
+/**
  * Class: MediaProduct
  * This is the parent class of all of the different media products
- * Variables:
- * title: the name of the media
- * price: the cost of the media
- * year: the release date of the media
- * genre: what genre of media a particular piece of media is 
+ * @param title the name of the media
+ * @param price the cost of the media
+ * @param year the release date of the media
+ * @param genre what genre of media a particular piece of media is 
  */
 public class MediaProduct {
 	//Variables///////////////////
